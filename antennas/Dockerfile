@@ -9,7 +9,6 @@ RUN \
         openssl-dev \
         nodejs \
         npm \
-RUN npm install
 EXPOSE 5004
 CMD ["npx", "--yes", "."]
 # Build arguments
