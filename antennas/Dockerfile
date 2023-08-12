@@ -5,15 +5,12 @@ RUN \
     && apk add --no-cache --virtual .build-deps \
         yaml \
         openssl-dev \
-COPY . /antennas
-WORKDIR "/antennas"
+COPY rootfs /
+WORKDIR "/"
 RUN npm install
 
 EXPOSE 5004
 CMD ["npx", "--yes", "."]
-
-# Copy root filesystem
-COPY rootfs /
 
 # Build arguments
 ARG BUILD_ARCH
