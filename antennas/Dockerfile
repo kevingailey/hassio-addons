@@ -8,7 +8,7 @@ RUN \
         yaml \
         openssl-dev \
         nodejs \
-        nodejs-npm \
+        npm \
 RUN npm install
 EXPOSE 5004
 CMD ["npx", "--yes", "."]
