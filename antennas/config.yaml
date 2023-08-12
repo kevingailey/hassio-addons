@@ -1,0 +1,38 @@
+---
+name: Antennas
+version: dev
+stage: experimental
+slug: antennas
+description: TV streaming server and recorder.
+url: "https://github.com/kevingailey/hassio-addons"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+webui: "http://[HOST]:[PORT:5004]/"
+devices:
+  - /dev/dvb
+  - /dev/dri
+ports:
+  5004/tcp: 5004
+ports_description:
+  5004/tcp:  Web Interface
+map:
+  - "config:rw"
+options:
+  TVHEADEND_URL: []
+  ANTENNAS_URL: []
+  TVHEADEND_STREAM_URL: []
+  TUNER_COUNT: []
+schema:
+  TVHEADEND_URL:
+    - str
+  ANTENNAS_URL:
+    - str   
+  TVHEADEND_STREAM_URL:
+    - str 
+  TUNER_COUNT:
+    - str
