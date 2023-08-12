@@ -1,0 +1,52 @@
+{
+  "arch": [
+    "i686",
+    "amd64",
+  ],
+  "codenotary": "kg@kg8.org",
+  "description": "Antennas TVHeadend Proxy for Plex Live TV DVR",
+  "environment": {
+    "PUID": 0,
+    "PGID": 0,
+    "VERSION": "docker"
+  },
+  "host_network": true,
+  "image": "ghcr.io/thejf/antennas",
+  "init": false,
+  "map": [
+    "share:rw",
+    "media:rw",
+    "ssl"
+  ],
+  "name": "Antennas",
+  "options": {
+    "TVHEADEND_URL": "http://replace:me@x.x.x.x:9981",
+    "TVHEADEND_STREAM_URL": "null"
+    "ANTENNAS_URL": "http://127.0.0.1:5004",
+    "TUNER_COUNT" : "10"
+  },
+  "ports": {
+    "5004/tcp": 5004
+  },
+  "ports_description": {
+    "5004/tcp": "Antennas WEB UI"
+  },
+  "privileged": [
+    "SYS_ADMIN",
+    "DAC_READ_SEARCH"
+  ],
+  "schema": {
+    "PGID": "int",
+    "PUID": "int",
+    "TVHEADEND_URL": "str",
+    "ANTENNAS_URL": "str?",
+    "TUNER_COUNT": "int?"
+    "TVHEADEND_STREAM_URL" : "str?"
+    
+  },
+  "slug": "antennas",
+  "url": "https://github.com/kevingailey/hassio-addons/tree/master/antennas",
+  "version": "4.2.0",
+  "video": true,
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:5004]"
+}
