@@ -4,11 +4,7 @@ COPY rootfs /
 WORKDIR "/"
 RUN \
     apk update \
-    && apk add --no-cache --virtual .build-deps \
-        yaml \
-        openssl-dev \
-        nodejs \
-        npm \
+    && apk add --no-cache --virtual .build-deps yaml openssl-dev nodejs npm \
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
