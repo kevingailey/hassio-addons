@@ -2,12 +2,14 @@ FROM node:16-alpine
 LABEL maintainer="kg@kg8.org"
 COPY rootfs /
 WORKDIR "/"
-RUN npm install
 RUN \
     apk update \
     && apk add --no-cache --virtual .build-deps \
         yaml \
         openssl-dev \
+        nodejs \
+        nodejs-npm \
+RUN npm install
 EXPOSE 5004
 CMD ["npx", "--yes", "."]
 # Build arguments
