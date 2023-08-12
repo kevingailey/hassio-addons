@@ -9,8 +9,6 @@ RUN \
         openssl-dev \
         nodejs \
         npm \
-EXPOSE 5004
-CMD ["npx", "--yes", "."]
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
